@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <title>Data</title>
+</head >
+<body >
+    <div style="text-align: right;">
+        <a href="/logout/" ><button style="font-size: xx-large;">logout</button></a>
+    </div>
+    <h1 style="color: blue; text-align: center;" >Employee Data</h1>
+    <div style="display: flex;justify-content: center;">
+    <table border="2px" style="border-color: blueviolet;";>
+        <tr style="font-size: x-large;">
+        <th>SR.NO</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>Date of Birth</th>
+        <th>Department</th>
+        <th>Action</th>
+        </tr>
+
+         {% for di in data %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ di.fname }}</td>
+            <td>{{ di.lname }}</td>
+            <td>{{ di.gender }}</td>
+            <td>{{ di.date }}</td>
+            <td>{{ di.department }}</td>
+            <td>
+                <a href="/delete/{{ di.id }}" >  <button style="font-size: medium;">Delete</button></a>
+                <a href="/edit/{{ di.id }}"> <button style="font-size: medium;">Edit</button> </a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    </div><br>
+    <div style="text-align: center;">
+    <a href="/register/" > <button style="font-size: x-large;">Add NEW </button></a><br>
+    </div>
+
+
+</body>
+</html>

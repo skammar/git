@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <title> Registration Page </title>
+    <style>
+        label{
+
+            font-display:var(30px) ;
+            margin: 0.2 cm;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        input{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body style="text-align: center; background-color:rgb(195, 185, 212); "color: rgb(39, 104, 179);">
+    <h1 style="color:black;"> Employee Registration Page </h1>
+    <h2 style="font-size: 60px;color: #e43333;">------------------------------------------------------------------</h2>
+    <div class="form">
+        <form action="" method="post" style="color: #e43333;">
+         {% csrf_token %}
+               <div>
+                <label>First Name -:</label>
+                <input type="text" id="fname" name="fname" value="{{ data.fname }}" size="15" placeholder="Enter Employee name"  >
+                 </div><br><br>
+            <div>
+             <label>Last name -:</label>
+                <input type="text" id="lname" name="lname" value="{{ data.lname }}" size="15" placeholder="Enter your last name" >
+            </div><br><br>
+            <div>
+                <label>Gender -:</label>
+                <label for="gender">Gender:</label>
+                 <select name="gender" id="gender" value="{{ data.gender }}">
+                   <option value="M">Male</option>
+                   <option value="F">Female</option>
+                   <option value="O">Other</option>
+                    </select>
+                </div><br><br>
+
+                <div>
+               <label>Date Of Birth -: </label>
+               <input type="date" id="date"  name="date" value="{{ data.date }}" required>
+            </div><br><br>
+            <div><label>Department -:</label>
+                <input type="text" id="department" name="department"  value="{{ data.department }}" size="15" placeholder="Enter your Department Here ">
+            </div><br><br>
+
+
+                <button type="submit" style="color: #18351c;" border="bold" >Submit</button>
+
+
+    </form>
+</div>
+</body>
+
+</html>
+
+
+

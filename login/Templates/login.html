@@ -1,0 +1,51 @@
+
+<html>
+<head>
+    <title> login page</title>
+    <style type="text/css">
+        form{
+         color: red;font-size: 30px;
+        }
+        input{
+            font-size:20px;
+        }
+    </style>
+</head>
+
+
+
+<body style="background-color: #FFFFFF ;">
+
+  {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+    <marquee><h1 >Please Login Here </h1></marquee>
+    <form action="" method="post" style="text-align: center;">
+        {% csrf_token %}
+       <div class="container">
+        <br><br>
+       <label >username</label>
+       <input  type="text" id="username" name="username" placeholder="Enter Your username" required>
+       </div><br>
+       <div>
+        <label> Password</label>
+        <input type="password" id="pass1" name="pass1" placeholder="Enter Your Password" required>
+       </div><br>
+
+       <div>
+           <button style="" type="submit"> Submit </button>
+       </div>
+
+       <p>Create an account <a href="/signup/">signup</a></p>
+   </form>
+</body>
+
+
+
+
+
